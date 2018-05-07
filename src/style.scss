@@ -1,0 +1,233 @@
+/*Reprise du footer et du header de la quete intégrale*/
+
+/*MEDIAQUERIES*/
+@media all and (max-width: 991.98px) {
+  #navigation #myNavbar ul a:after {
+    display: none;
+  }
+  .centerContent {
+    justify-content: center;
+  }
+  #hunter h3 {
+    font-size: 16px;
+  }
+  .smallText {
+    display: none;
+  }
+  h2 {
+    font-size: 20px !important;
+  }
+  .orangeCursive {
+    display: none;
+  }
+  #ring .card-header {
+    font-size: 15px !important;
+  }
+}
+
+/*Font*/
+@font-face {
+    font-family: titleBold;
+    src: url(./font/anicb.ttf);
+}
+@font-face {
+    font-family: title;
+    src: url(./font/anirm.ttf);
+}
+
+@font-face{
+    font-family: symbole;
+    src: url(./font/tngani.ttf);
+}
+
+@font-face {
+    font-family: texte;
+    src: url(./font/partybusiness.ttf);
+}
+
+/*General*/
+
+body {
+  font-family: texte;
+}
+
+.container-fluid {
+  padding: 40px 20px;
+}
+
+.center {
+  text-align: center;
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.marginBottom {
+  margin-bottom: 30px;
+}
+
+.marginUp {
+  margin-top: 20px;
+}
+
+.col-xl-10 {
+  padding: 0;
+}
+
+.lineOrangeTop {
+  border-top: 4px solid rgb(238, 122, 56);
+}
+
+.lineOrangeBottom {
+  border-bottom: 4px solid rgb(238, 122, 56);
+}
+
+.margin-left {
+  margin-left: 20px;
+}
+
+.orangeCursive {
+  color: rgb(238, 122, 56);
+  font-family: symbole;
+  font-size: 25px;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1 {
+  display: inline;
+  font-family: title;
+  color: black;
+  font-size: 28px;
+  margin: 0 10px;
+  padding-top: 5px;
+}
+
+.orange {
+  color: rgb(238, 122, 56);
+}
+
+/*Navbar*/
+
+.navbar {
+  padding: 8px;
+}
+
+.navbar > a {
+  padding: 0;
+}
+
+#navigation {
+  padding: inherit;
+  nav {
+    background: rgb(238, 122, 56);
+  }
+  li {
+    margin-right: 5px;
+    text-align: center;
+    a {
+      color: white;
+      font-family: title;
+      &:hover {
+      border-bottom: 2px solid white;
+      }
+    }
+  }
+  #myNavbar ul {
+    a:after {
+      position: absolute;
+      margin-left: 10px;
+      bottom: 35%;
+      content: " ";
+      border-top: 8px solid white;
+      border-bottom: 8px solid white;
+      border-right: 1px solid white;
+    }
+    li:last-child a:after {
+      display: none;
+    }
+  }
+  .fa-bars {
+    color: white;
+    font-size: 30px;
+  }
+}
+
+/*FOOTER*/
+
+footer {
+  background: rgb(238, 122, 56);
+  padding-bottom: 10px;
+  padding-top: 30px;
+  a {
+    font-family: title;
+    font-size: 12px;
+    color: white;
+    &:hover {
+      color: black;
+      text-decoration: underline black;
+      text-underline-position: under;
+      transition: 0.8s;
+    }
+  }
+  .row {
+    margin-bottom: 15px;
+  }
+  img {
+    margin-top: 10px;
+  }
+}
+
+
+
+/*New content*/
+
+
+/*PREPRO*/
+
+/*MIXINS*/
+@mixin circle($border,$width,$height,$color){
+    height:$height;
+    width: $width;
+    border: $border;
+    border-radius: 50%;
+    box-shadow: $color;
+}
+
+
+
+#prepro{
+    background: url('./integration_maquette_finale/_bg_light.png');
+    .row{
+        margin:50px 0;
+    }
+    h1{
+        margin:0 20px;
+    }
+    .circle{
+        @include circle(5px solid orange,50px,50px,inset 2px 2px 2px orange)
+    }
+    .yellowCircle{
+        @include circle(12px solid rgba(255, 247, 23, 0.986),150px,150px,inset 5px 5px 5px rgba(212, 205, 5, 0.986))
+    }
+    .ringSix{
+      position: absolute;
+      height:120px;
+      width:400px;
+      display: flex;
+      align-items: center;
+      @for $i from 1 through 6 {
+        .circle-#{$i} {
+            @include circle(5px solid black,50px+($i*6),50px+($i*6),inset 2px 2px 2px grey);
+            position: absolute;
+            margin-left: 0px + ($i*42);
+        }
+
+      }
+    }
+    
+}
