@@ -1,5 +1,10 @@
 /*Reprise du footer et du header de la quete intégrale*/
 
+
+@import "custom";
+@import "~bootstrap/scss/bootstrap";
+
+
 /*MEDIAQUERIES*/
 @media all and (max-width: 991.98px) {
   #navigation #myNavbar ul a:after {
@@ -231,3 +236,6 @@ footer {
     }
     
 }
+
+
+/*WEBPACK Primary*/
